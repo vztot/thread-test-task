@@ -2,7 +2,7 @@ public class Main {
     public static final int COUNT_OF_LOOPS = 100;
 
     public static void main(String[] args) {
-        new Thread(()-> {
+        new Thread(() -> {
             int i = 0;
             while (i != COUNT_OF_LOOPS) {
                 i++;
