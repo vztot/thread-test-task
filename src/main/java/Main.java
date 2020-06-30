@@ -8,13 +8,8 @@ public class Main {
         PrintStream fileOut = new PrintStream("./log.txt");
         System.setOut(fileOut);
 
-        new Thread(() -> {
-            int i = 0;
-            while (i != COUNT_OF_LOOPS) {
-                System.out.println(Thread.currentThread().getName() + " value = " + ++i);
-            }
-        }).start();
-
-        new ThreadClass().start();
+        Incrementer incrementer = new Incrementer();
+        new ExtendsThread(incrementer).start();
+        new Thread(new ImplementsRunnable(incrementer)).start();
     }
 }
