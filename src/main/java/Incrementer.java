@@ -1,17 +1,17 @@
 public class Incrementer {
-    private int i = 0;
+    private int value = 0;
 
     public synchronized Incrementer increment() {
-        i++;
+        value++;
         return this;
     }
 
     public synchronized int getValue() {
-        return i;
+        return value;
     }
 
     @Override
     public synchronized String toString() {
-        return Thread.currentThread().getName() + " value = " + i;
+        return Thread.currentThread().getName() + " value = " + value;
     }
 }
