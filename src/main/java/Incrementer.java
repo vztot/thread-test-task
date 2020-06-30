@@ -1,7 +1,7 @@
 public class Incrementer {
     private int value = 0;
 
-    public synchronized Incrementer increment() {
+    public Incrementer increment() {
         value++;
         return this;
     }
